@@ -34,10 +34,10 @@ pswdChange(event:any){
   console.log(this.pswd);
 }
 // }
-login(){
+login(a:any,p:any){
 
-var acno=this.accno;
-var pswd=this.pswd;
+var acno=a.value;
+var pswd=p.value;
 let users = this.AccountDetails
         if (acno in users) {
             if (pswd == users[acno]["password"]) {
