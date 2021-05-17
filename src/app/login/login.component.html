@@ -1,32 +1,33 @@
 <div class="container first ">
     <div class="row">
         <div class="col-6 col-lg-6 ">
-            <div class=left><h1 class="head1">Green Bank</h1>
+            <div class=left>
+                <h1 class="head1">Green Bank</h1>
 
 
-                <img class=" imgg" src="assets/images.png"
-                    alt=""><h2 class="head2">
-                        Adopts the pace of Nature</h2>
-                        
-                </div>
-            
+                <img class=" imgg" src="assets/images.png" alt="">
+                <h2 class="head2">
+                    Adopts the pace of Nature</h2>
+
+            </div>
+
         </div>
         <div class="col-4 rw1">
             <h6>{{aim}}</h6>
             <div class="mb-3 ">
-                <input class="text-box" type="text" id="acno" #acno  [value]="accno" placeholder="enter account number">
-
+                <input class="text-box" type="text" id="acno" [(ngModel)]="accno" [value]="accno"
+                    placeholder="enter account number">
 
             </div>
             <!-- <div class="mb-3 ">
                 <input class="text-box" type="text"id="uname" placeholder="enter user name">
             </div> -->
             <div class="mb-3">
-                <input class="text-box" type="password" #pswd id="pwd" placeholder="enter password">
+                <input class="text-box" type="password" id="pwd" [(ngModel)]="pswd" placeholder="enter password">
             </div>
 
             <br>
-            <button class="btn btn-success" (click)="login(acno,pswd)">LogIn</button>
+            <button class="btn btn-success" (click)="login()">LogIn</button>
 
         </div>
         <div class="col-2"></div>
