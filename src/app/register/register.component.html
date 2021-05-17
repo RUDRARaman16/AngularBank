@@ -4,7 +4,7 @@
             <img class="imgg" src="assets/images.png" alt="">
             Green Bank</a>
         <div>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navi2 navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Our Services</a>
                 </li>
@@ -22,7 +22,6 @@
     </div>
 </nav>
 
-
 <div class="container first ">
     <div class="row">
         <div class="col-6 col-lg-6 ">
@@ -38,23 +37,23 @@
 
         </div>
         <div class="col-4 rw1">
-            <h6>{{aim}}</h6>
+           <h3>New Registration</h3>
             <div class="mb-3 ">
                 <input class="text-box" type="text" id="acno" [(ngModel)]="accno" [value]="accno"
                     placeholder="enter account number">
 
             </div>
-            <!-- <div class="mb-3 ">
-                <input class="text-box" type="text"id="uname" placeholder="enter user name">
-            </div> -->
+            <div class="mb-3 ">
+                <input class="text-box" type="text"id="uname" [(ngModel)]="uname" placeholder="enter user name">
+            </div>
             <div class="mb-3">
                 <input class="text-box" type="password" id="pwd" [(ngModel)]="pswd" placeholder="enter password">
             </div>
 
             <br>
-            <button class="btn btn-success" (click)="login()">LogIn</button>
-            <a href="#">Forgotten Password?</a>
-            <button class="btn btn-success" (click)="register()">Create New Account</button>
+
+           
+            <button class="btn btn-success" (click)="register()">Register</button>
 
         </div>
         <div class="col-2"></div>
@@ -63,3 +62,6 @@
 
 
 </div>
+
+            
+    

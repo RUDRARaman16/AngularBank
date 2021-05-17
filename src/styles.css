@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.navi{
+    background-color: rgb(221, 248, 226);
+height: 50px;
+}
+.navi2{
+    font-size: medium;
+}
 .head1{
     color: rgb(1, 59, 1);
     font-size: 59px;
