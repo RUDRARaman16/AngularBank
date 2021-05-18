@@ -39,23 +39,28 @@
         </div>
         <div class="col-4 rw1">
             <h6>{{aim}}</h6>
-            <div class="mb-3 ">
-                <input class="text-box" type="text" id="acno" [(ngModel)]="accno" [value]="accno"
-                    placeholder="enter account number">
+            <form (ngSubmit)="login()">
 
-            </div>
-            <!-- <div class="mb-3 ">
+                <div class="mb-3 ">
+                    <input class="text-box" type="text" id="acno" [(ngModel)]="accno" [value]="accno" name="account"
+                        placeholder="enter account number">
+                </div>
+                <!-- <div class="mb-3 ">
                 <input class="text-box" type="text"id="uname" placeholder="enter user name">
             </div> -->
-            <div class="mb-3">
-                <input class="text-box" type="password" id="pwd" [(ngModel)]="pswd" placeholder="enter password">
-            </div>
 
-            <br>
-            <button class="btn btn-success" (click)="login()">LogIn</button>
-            <a href="#">Forgotten Password?</a>
-            <button class="btn btn-success" (click)="register()">Create New Account</button>
+                <div class="mb-3">
+                    <input class="text-box" type="password" id="pwd" [(ngModel)]="pswd" name="passwd"
+                        placeholder="enter password">
+                </div>
 
+                
+                <button class="btn btn-success" type="submit" >LogIn</button>
+                
+                <a href="" routerLink="register">Forgotten Password?</a>
+                
+                <button class="btn btn-success" type="submit" (click)="register()">Create New Account</button>
+            </form>
         </div>
         <div class="col-2"></div>
     </div>

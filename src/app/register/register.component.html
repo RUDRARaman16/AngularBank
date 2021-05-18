@@ -37,24 +37,25 @@
 
         </div>
         <div class="col-4 rw1">
-           <h3>New Registration</h3>
-            <div class="mb-3 ">
-                <input class="text-box" type="text" id="acno" [(ngModel)]="accno" [value]="accno"
-                    placeholder="enter account number">
 
-            </div>
-            <div class="mb-3 ">
-                <input class="text-box" type="text"id="uname" [(ngModel)]="uname" placeholder="enter user name">
-            </div>
-            <div class="mb-3">
-                <input class="text-box" type="password" id="pwd" [(ngModel)]="pswd" placeholder="enter password">
-            </div>
+            <h3>New Registration</h3>
 
-            <br>
+            <form ngSubmit="register()">
+                <div class="mb-3 ">
+                    <input class="text-box" type="text" id="acno" [(ngModel)]="accno" [value]="accno" name="account"
+                        placeholder="enter account number">
 
-           
-            <button class="btn btn-success" (click)="register()">Register</button>
+                </div>
+                <div class="mb-3 ">
+                    <input class="text-box" type="text" id="uname" [(ngModel)]="uname" name="uname" placeholder="enter user name">
+                </div>
+                <div class="mb-3">
+                    <input class="text-box" type="password" id="pwd" [(ngModel)]="pswd"  name="passwd"placeholder="enter password">
+                </div>
 
+                <button type="submit" class="btn btn-success" (click)="register()">Register</button>
+                <a  routerLink="">Log In</a>
+            </form>
         </div>
         <div class="col-2"></div>
     </div>
@@ -62,6 +63,3 @@
 
 
 </div>
-
-            
-    
