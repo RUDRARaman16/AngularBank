@@ -13,23 +13,48 @@ export class DataService {
   constructor() { }
 
 
-  // register(uname: any, acno: any, pswd: any) {
-  //   let user = this.AccountDetails
-  //   if (acno in user) {
-  //     return true
-  //     alert("User Exists...Please Login")
-  //   }
-  //   else {
-  //     user[acno] = {
-  //       acno,
-  //       username: uname,
-  //       password: pswd,
-  //       balance: 0
-  //     }
-  //     return true
-  //     alert("Successfully Registered")
-  //     this.router.navigateByUrl("")
+  register(uname: any, acno: any, pswd: any) {
+    let user = this.AccountDetails
+    if (acno in user) {
+      return false
 
-  //   }
-  // }
+    }
+    else {
+      user[acno] = {
+        acno,
+        username: uname,
+        password: pswd,
+        balance: 0
+      }
+      return true
+
+
+    }
+  }
+
+  login(acno: any, pswd: any) {
+    let users = this.AccountDetails
+    if (acno in users) {
+      if (pswd == users[acno]["password"]) {
+        return true
+        
+      }
+      else {
+        return false
+        
+      }
+    }
+    else {
+      alert("Invalid Account")
+      return false
+    }
+
+
+
+
+
+
+
+
+  }
 }

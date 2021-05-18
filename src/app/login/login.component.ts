@@ -35,20 +35,12 @@ export class LoginComponent implements OnInit {
 
     var acno = this.accno;
     var pswd = this.pswd;
-    let users = this.dataservice.AccountDetails
-    if (acno in users) {
-      if (pswd == users[acno]["password"]) {
+    const result=this.dataservice.login(acno,pswd)
+if(result){
+  alert("Login Successful")
+  this.router.navigateByUrl("dashboard")
+}
 
-        alert("Login Successful")
-        this.router.navigateByUrl("dashboard")
-      }
-      else {
-        alert("Incorrect Password")
-      }
-    }
-    else {
-      alert("Invalid Account")
-    }
 
 
   }
