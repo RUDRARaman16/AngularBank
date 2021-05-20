@@ -33,41 +33,51 @@
 
             </div>
             <div class="col-4 rw1">
+                <h4> Deposit Form</h4>
                 <form action="">
                     <div class="mb-3 ">
-                        <input class="text-box" type="text" id="uname" placeholder="Enter user name">
+                        <input class="text-box" type="text" id="uname" [(ngModel)]="dAccno" name="accno"
+                            placeholder="Enter Account number">
                     </div>
                     <div class="mb-3">
-                        <input class="text-box" type="password" id="pwd" placeholder="Enter password">
+                        <input class="text-box" type="password" id="pwd" [(ngModel)]="dPswd" name="accno"
+                            placeholder="Enter password">
                     </div>
                     <div class="mb-3 ">
-                        <input class="text-box" type="text" id="acno" placeholder="Enter Amount">
+                        <input class="text-box" type="text" id="amt" [(ngModel)]="dAmount" name="accno"
+                            placeholder="Enter Amount">
 
 
                     </div>
 
                     <br>
 
-                    <button class="btn btn-success">WIthdraw</button>
+                    <button type="submit" class="btn btn-success" (click)="deposit()">Deposit</button>
 
                 </form>
 
             </div>
             <div class="col-4 rw1">
+                <h4>Withdraw Form</h4>
+
+
                 <form action="">
                     <div class="mb-3 ">
-                        <input class="text-box" type="text" id="uname" placeholder="Enter user name">
+                        <input class="text-box" type="text" id="uname" [(ngModel)]="wAccno" name="accno"
+                            placeholder="Enter user name">
                     </div>
                     <div class="mb-3">
-                        <input class="text-box" type="password" id="pwd" placeholder="Enter password">
+                        <input class="text-box" type="password" id="pwd" [(ngModel)]="wPswd" name="passwd"
+                            placeholder="Enter password">
                     </div>
                     <div class="mb-3 ">
-                        <input class="text-box" type="text" id="acno" placeholder="Enter Amount">
+                        <input class="text-box" type="text" id="acno" [(ngModel)]="wAmount" name="amt"
+                            placeholder="Enter Amount">
                     </div>
 
                     <br>
 
-                    <button class="btn btn-success">Deposit</button>
+                    <button class="btn btn-success" (click)="withdraw()">Withdraw</button>
                 </form>
             </div>
             <div class="col-2">
