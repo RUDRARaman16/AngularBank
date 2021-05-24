@@ -1,31 +1,29 @@
-<nav class="navbar navbar-expand-lg navbar-light navi">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img class="imgg" src="assets/images.png" alt="">
-            Green Bank</a>
-        <div>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Our Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">FeedBack</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Support</a>
-                </li>
-            </ul>
-        </div>
+<nav class="navbar  navbar-expand-lg navbar-light main-div">
+    <a class="navbar-brand" href="">Green Bank</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse collapse  justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Support</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Our Services</a>
+            </li>
+        </ul>
     </div>
 </nav>
 
 
 <div class="container first ">
     <div class="row">
-        <div class="col-6 col-lg-6 ">
+        <div class="col-lg-6 col-md-6  ">
             <div class=left>
                 <h1 class="head1">Green Bank</h1>
 
@@ -33,32 +31,28 @@
                 <img class=" imgg" src="assets/images.png" alt="">
                 <h2 class="head2">
                     Adopts the pace of Nature</h2>
-
             </div>
-
         </div>
-        <div class="col-4 rw1">
+        <div class="col-lg-4 col-md-6 rw1">
             <h6>{{aim}}</h6>
-            <form (ngSubmit)="login()">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
 
                 <div class="mb-3 ">
-                    <input class="text-box" type="text" id="acno" [(ngModel)]="accno" [value]="accno" name="account"
+                    <input class="text-box" type="text" id="acno" formControlName="accno" name="accno"
                         placeholder="enter account number">
+                        <div *ngIf="(loginForm.get('accno')?.touched || loginForm.get('accno')?.dirty ) && loginForm.get('accno')?.errors" class="error"> * Invalid Account Number</div>
                 </div>
                 <!-- <div class="mb-3 ">
                 <input class="text-box" type="text"id="uname" placeholder="enter user name">
             </div> -->
 
                 <div class="mb-3">
-                    <input class="text-box" type="password" id="pwd" [(ngModel)]="pswd" name="passwd"
+                    <input class="text-box" type="password" id="pwd" formControlName="pswd" name="pswd"
                         placeholder="enter password">
+                        <div *ngIf="(loginForm.get('pswd')?.touched || loginForm.get('pswd')?.dirty ) && loginForm.get('pswd')?.errors" class="error"> * Invalid Password</div>
                 </div>
-
-                
-                <button class="btn btn-success" type="submit" >LogIn</button>
-                
+                <button class="btn btn-success" type="submit">LogIn</button>
                 <a href="" routerLink="register">Forgotten Password?</a>
-                
                 <button class="btn btn-success" type="submit" (click)="register()">Create New Account</button>
             </form>
         </div>

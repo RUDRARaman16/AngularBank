@@ -1,16 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+.main-div{
+   
+    background-color:rgb(197 230 172);
+    align-items: center;
+    text-decoration: none;
+    color: black;
+  }
+ 
+
+
 .whole{
     
     height: 700px;
 }
-.navi{
-    background-color:rgb(197 230 172);
-height: 50px;
-}
-.navi2{
-    font-size: medium;
-   
-}
+
 .welcome{
     color:rgb(1, 59, 1);
     margin-top: 50px;
@@ -41,15 +44,18 @@ width: 50px;
     margin-right: 46%;
 }
 .rw{
-    margin-top: -70px;
+    margin-top: -90px;
+  margin-left: 60px;
+   display: flex;
+   justify-content: center;
     padding: 0;
 }
 
 .rw1{
-   padding: 45px;
+   padding: 35px;
     background-color:rgb(197 230 172) ;
     border-radius:30px;
-    
+    margin-bottom: 20px;
  margin-right: 90px;
 }
 .first{

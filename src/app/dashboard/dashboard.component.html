@@ -1,92 +1,77 @@
-<div class="whole">
-    <nav class="navbar navbar-expand-lg navbar-light navi">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img class="imgg" src="assets/images.png" alt="">
-                Green Bank</a>
-            <div>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Our Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">FeedBack</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="#">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Support</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="welcome">
-        <h1 class="h1">Welcome User</h1>
+<nav class="navbar  navbar-expand-lg navbar-light  main-div">
+    <a class="navbar-brand" href="">Green Bank</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto ">
+            <li class="nav-item">
+                <a class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Support</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link">Our Services</a>
+            </li>
+        </ul>
     </div>
-    <div class="container first ">
-        <div class="row rw">
+</nav>
 
-            <div class="col-2">
-
-
-            </div>
-            <div class="col-4 rw1">
-                <h4> Deposit Form</h4>
-                <form action="">
-                    <div class="mb-3 ">
-                        <input class="text-box" type="text" id="uname" [(ngModel)]="dAccno" name="accno"
-                            placeholder="Enter Account number">
-                    </div>
-                    <div class="mb-3">
-                        <input class="text-box" type="password" id="pwd" [(ngModel)]="dPswd" name="accno"
-                            placeholder="Enter password">
-                    </div>
-                    <div class="mb-3 ">
-                        <input class="text-box" type="text" id="amt" [(ngModel)]="dAmount" name="accno"
-                            placeholder="Enter Amount">
-
-
-                    </div>
-
-                    <br>
-
-                    <button type="submit" class="btn btn-success" (click)="deposit()">Deposit</button>
-
-                </form>
-
-            </div>
-            <div class="col-4 rw1">
-                <h4>Withdraw Form</h4>
-
-
-                <form action="">
-                    <div class="mb-3 ">
-                        <input class="text-box" type="text" id="uname" [(ngModel)]="wAccno" name="accno"
-                            placeholder="Enter user name">
-                    </div>
-                    <div class="mb-3">
-                        <input class="text-box" type="password" id="pwd" [(ngModel)]="wPswd" name="passwd"
-                            placeholder="Enter password">
-                    </div>
-                    <div class="mb-3 ">
-                        <input class="text-box" type="text" id="acno" [(ngModel)]="wAmount" name="amt"
-                            placeholder="Enter Amount">
-                    </div>
-
-                    <br>
-
-                    <button class="btn btn-success" (click)="withdraw()">Withdraw</button>
-                </form>
-            </div>
-            <div class="col-2">
-
-            </div>
+<div class="welcome">
+    <h1 class="h1">Welcome {{user}}</h1>
+</div>
+<div class="container first ">
+    <div class="row rw">
+        <div class="">
         </div>
-
-
-
-
+        <div class="col-lg-4 col-md-6 rw1">
+            <h4> Deposit Form</h4>
+            <form [formGroup]="depositForm" (ngSubmit)="deposit()">
+                <div class="mb-3 ">
+                    <input class="text-box" type="text" id="uname1"formControlName="accno" name="accno"
+                        placeholder="Enter Account number">
+                        <div *ngIf="(depositForm.get('accno')?.touched || depositForm.get('accno')?.dirty ) && depositForm.get('accno')?.errors" class="error"> * Invalid Account Number</div>
+                </div>
+                <div class="mb-3">
+                    <input class="text-box" type="password" id="pwd1" formControlName="pswd" name="pswd"
+                        placeholder="Enter password">
+                        <div *ngIf="(depositForm.get('pswd')?.touched || depositForm.get('pswd')?.dirty ) && depositForm.get('pswd')?.errors" class="error"> * Invalid Password</div>
+                </div>
+                <div class="mb-3 ">
+                    <input class="text-box" type="text" id="amt1" formControlName="amount" name="amount"
+                        placeholder="Enter Amount">
+                        <div *ngIf="(depositForm.get('amount')?.touched || depositForm.get('amount')?.dirty ) && depositForm.get('amount')?.errors" class="error"> * Invalid Amount</div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success" (click)="deposit()">Deposit</button>
+            </form>
+        </div>
+        <div class="col-lg-4 col-md-6 rw1">
+            <h4>Withdraw Form</h4>
+            <form  [formGroup]="withdrawForm" (ngSubmit)="withdraw()">
+                <div class="mb-3 ">
+                    <input class="text-box" type="text" id="uname2" formControlName="accno" name="accno"
+                        placeholder="Enter Account number">
+                        <div *ngIf="(withdrawForm.get('accno')?.touched || withdrawForm.get('accno')?.dirty ) && withdrawForm.get('accno')?.errors" class="error"> * Invalid Account Number</div>
+                </div>
+                <div class="mb-3">
+                    <input class="text-box" type="password" id="pwd2" formControlName="pswd" name="passwd"
+                        placeholder="Enter password">
+                        <div *ngIf="(withdrawForm.get('pswd')?.touched || withdrawForm.get('pswd')?.dirty ) && withdrawForm.get('pswd')?.errors" class="error"> * Invalid Password</div>
+                </div>
+                <div class="mb-3 ">
+                    <input class="text-box" type="text" id="amt2"formControlName="amount" name="amt"
+                        placeholder="Enter Amount">
+                        <div *ngIf="(withdrawForm.get('amount')?.touched || withdrawForm.get('amount')?.dirty ) && withdrawForm.get('amount')?.errors" class="error"> * Invalid Amount </div>
+                </div>
+                <br>
+                <button class="btn btn-success" (click)="withdraw()">Withdraw</button>
+            </form>
+        </div>
+        <div class="">
+        </div>
     </div>
 </div>
